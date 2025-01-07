@@ -1,0 +1,29 @@
+services:
+  crud_postgres:
+    image: postgres:15
+    container_name: crud_postgres_container
+    environment:
+      POSTGRES_USER: crud_user
+      POSTGRES_PASSWORD: crud_password
+      POSTGRES_DB: crud_database
+    ports:
+      - "5432:5432"
+    volumes:
+      - crud_postgres_data:/var/lib/postgresql/data
+    restart: always
+
+  crud_pgadmin:
+    image: dpage/pgadmin4
+    ports:
+      - "8085:80"
+    container_name: crud_postgres_admin_container
+
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: crud_password
+    restart: always
+    volumes:
+      - crud_pgadmin_data:/var/lib/pgadmin
+volumes:
+  crud_postgres_data:
+  crud_pgadmin_data:
