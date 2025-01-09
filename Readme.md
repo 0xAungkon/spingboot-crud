@@ -34,3 +34,10 @@
 | spring-security-test | Provides testing support for Spring Security features. Used for testing authentication and authorization. |
 | junit-jupiter | JUnit 5 support for testing. Required for unit tests in the application. |
 | h2 | In-memory database used for testing. Simulates database operations without an actual database. |
+
+---
+
+# Commands
+
+`psql -U crud_user -d crud_database -h localhost # pasword=crud_password`  
+`./mvnw spring-boot:run`

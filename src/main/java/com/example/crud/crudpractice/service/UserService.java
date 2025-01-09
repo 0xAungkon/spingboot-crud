@@ -41,6 +41,10 @@ public class UserService {
         }
     }
 
+    public boolean emailExists(String email) {
+        return userRepository.findByEmail(email).isPresent();
+    }
+
     // Delete a user
     public boolean deleteUser(Long id) {
         if (userRepository.existsById(id)) {
